@@ -26,5 +26,11 @@ namespace Weather_Station
         {
             this.observer.Remove(obs);
         }
+        string state;
+        public string State
+        {
+            get { return state; }
+            set { state = value; notifyObserver(); }
+        }
     }
 }
