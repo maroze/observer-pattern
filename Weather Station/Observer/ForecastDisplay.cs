@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather_Station
+namespace Observer
 {
-   public interface Observer
+    class ForecastDisplay
     {
-        void Update(float temp, float humidity, float pressure);
     }
 }

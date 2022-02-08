@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace Weather_Station
 {
-    public class ConcreteSubject : Subject
+    public class WeatherData : Subject
     {
+        private float temperature;
+        private float humidity;
+        private float pressure;
+
         private List<Observer> observer = new List<Observer>();
         public void notifyObserver()
         {
             foreach (var obs in observer)
             {
-                obs.Update(this);
+                obs.Update(temperature, humidity, pressure);
             }
         }
 
@@ -26,11 +30,16 @@ namespace Weather_Station
         {
             this.observer.Remove(obs);
         }
-        string state;
-        public string State
+
+        public void measurementsChanged()
         {
-            get { return state; }
-            set { state = value; notifyObserver(); }
+            notifyObserver();
+        }
+        float state;
+        public float State
+        {
+            get { return temperature + humidity + pressure; }
+            set { temperature = value; humidity = value; pressure = value; measurementsChanged(); }
         }
     }
 }

@@ -42,7 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConcreteObserver.cs" />
-    <Compile Include="ConcreteSubject.cs" />
+    <Compile Include="CurrentConditionsDisplay.cs" />
+    <Compile Include="ForecastDisplay.cs" />
+    <Compile Include="StatisticsDisplay.cs" />
+    <Compile Include="WeatherData.cs" />
+    <Compile Include="DisplayElement.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subject.cs" />
