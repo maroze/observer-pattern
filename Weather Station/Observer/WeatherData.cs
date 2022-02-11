@@ -8,11 +8,16 @@ namespace Weather_Station
 {
     public class WeatherData : Subject
     {
+        private List<Observer> observer;
         private float temperature;
         private float humidity;
         private float pressure;
 
-        private List<Observer> observer = new List<Observer>();
+        public WeatherData()
+        { 
+             observer = new List<Observer>();
+        }
+       
         public void notifyObserver()
         {
             foreach (var obs in observer)
@@ -31,15 +36,16 @@ namespace Weather_Station
             this.observer.Remove(obs);
         }
 
-        public void measurementsChanged()
+        public void MeasurementsChanged()
         {
             notifyObserver();
         }
-        float state;
-        public float State
+        public void SetMeasurements(float temperature, float humidity, float pressure)
         {
-            get { return temperature + humidity + pressure; }
-            set { temperature = value; humidity = value; pressure = value; measurementsChanged(); }
+            this.temperature = temperature;
+            this.humidity = humidity;
+            this.pressure = pressure;
+            this.MeasurementsChanged();
         }
     }
 }

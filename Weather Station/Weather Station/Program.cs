@@ -10,24 +10,27 @@ namespace Weather_Station
     {
         static void Main(string[] args)
         {
-            ConcreteSubject subject = new ConcreteSubject();
-            ConcreteObserver observer1 = new ConcreteObserver();
-            ConcreteObserver observer2 = new ConcreteObserver();
+            WeatherData Sub = new WeatherData();
 
-            subject.registerObserver(observer1);
-            subject.State = "abc";
-            Console.WriteLine(observer1.Count);
-            Console.WriteLine(observer2.Count);
+            CurrentConditionsDisplay cd = new CurrentConditionsDisplay();
+            StatisticsDisplay sd = new StatisticsDisplay();
+            ForecastDisplay fd = new ForecastDisplay();
 
-            subject.registerObserver(observer2);
-            subject.State = "def";
-            Console.WriteLine(observer1.Count);
-            Console.WriteLine(observer2.Count);
-            
-            subject.removeObserver(observer2);
-            subject.State = "g";
-            Console.WriteLine(observer1.Count);
-            Console.WriteLine(observer2.Count);
+            Sub.registerObserver(cd);
+            Sub.registerObserver(sd);
+            Sub.registerObserver(fd);
+
+            Sub.SetMeasurements(10, 90, 740);
+            Sub.SetMeasurements(5, 100, 790);
+
+
+            Console.WriteLine(cd.Display());
+            Console.WriteLine();
+            Console.WriteLine(sd.Display());
+            Console.WriteLine();
+            Console.WriteLine(fd.Display());
+
+            Sub.removeObserver(fd);
 
             Console.ReadLine();
         }
