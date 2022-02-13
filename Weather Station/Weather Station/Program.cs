@@ -24,10 +24,12 @@ namespace Weather_Station
             Sub.GetPressure(790);
             Sub.GetHumidity(70);
             Sub.MeasurementsChanged();
+
             Sub.GetPressure(750);
             Sub.GetHumidity(50);
             Sub.GetTemperature(5);
             Sub.MeasurementsChanged();
+
             Console.WriteLine(cd.Display());
             Console.WriteLine();
             Console.WriteLine(sd.Display());
