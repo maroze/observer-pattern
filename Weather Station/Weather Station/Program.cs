@@ -30,6 +30,7 @@ namespace Weather_Station
 
             Console.WriteLine(observer2.Count);
 
+
             Console.ReadLine();
         }
     }
