@@ -100,7 +100,7 @@ namespace Weather_Station
             }
             if (avgpressure == 0)
             {
-                avgpressure = pressure;
+                avgpressure += pressure;
             }
             else
             {

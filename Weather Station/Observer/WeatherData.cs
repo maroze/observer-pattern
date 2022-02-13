@@ -14,10 +14,10 @@ namespace Weather_Station
         private float pressure;
 
         public WeatherData()
-        { 
-             observer = new List<Observer>();
+        {
+            observer = new List<Observer>();
         }
-       
+
         public void notifyObserver()
         {
             foreach (var obs in observer)
@@ -40,12 +40,21 @@ namespace Weather_Station
         {
             notifyObserver();
         }
-        public void SetMeasurements(float temperature, float humidity, float pressure)
+
+        public void GetTemperature(float temperature)
         {
             this.temperature = temperature;
+
+        }
+        public void GetHumidity(float humidity)
+        {
+
             this.humidity = humidity;
+
+        }
+        public void GetPressure(float pressure)
+        {
             this.pressure = pressure;
-            this.MeasurementsChanged();
         }
     }
 }
