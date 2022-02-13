@@ -27,7 +27,6 @@ namespace Weather_Station
             subject.removeObserver(observer2);
             subject.State = "g";
             Console.WriteLine(observer1.Count);
-
             Console.WriteLine(observer2.Count);
 
 
