@@ -8,6 +8,6 @@ namespace Weather_Station
 {
    public interface Observer
     {
-        void Update(float temp, float humidity, float pressure);
+
     }
 }

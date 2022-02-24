@@ -41,11 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentConditionsDisplay.cs" />
-    <Compile Include="ForecastDisplay.cs" />
-    <Compile Include="StatisticsDisplay.cs" />
-    <Compile Include="WeatherData.cs" />
-    <Compile Include="DisplayElement.cs" />
+
     <Compile Include="Observer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subject.cs" />
