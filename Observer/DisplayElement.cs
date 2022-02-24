@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Weather_Station
 {
-    class Program
+    public interface DisplayElement
     {
-        static void Main(string[] args)
-        {
-
-
-            Console.ReadLine();
-        }
+        string Display();
     }
 }
