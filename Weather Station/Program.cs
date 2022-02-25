@@ -20,16 +20,20 @@ namespace Weather_Station
             Sub.registerObserver(sd);
             Sub.registerObserver(fd);
 
-            Sub.GetTemperature(15);
-            Sub.GetPressure(790);
-            Sub.GetHumidity(70);
-            Sub.MeasurementsChanged();
+           
+
+            Sub.SetPressure(790);
+            
+            Sub.SetHumidity(70);
+            Sub.SetTemperature(15);
 
 
-            Sub.GetPressure(750);
-            Sub.GetHumidity(50);
-            Sub.GetTemperature(5);
-            Sub.MeasurementsChanged();
+            Sub.SetPressure(750);
+            
+            Sub.SetHumidity(50);
+            
+            Sub.SetTemperature(5);
+            
 
             Console.WriteLine(cd.Display());
             Console.WriteLine();
