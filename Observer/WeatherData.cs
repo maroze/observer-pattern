@@ -22,7 +22,7 @@ namespace Weather_Station
         {
             foreach (var obs in observer)
             {
-                obs.Update(temperature, humidity, pressure);
+                obs.Update(humidity,temperature,  pressure);
             }
         }
 
@@ -41,20 +41,22 @@ namespace Weather_Station
             notifyObserver();
         }
 
-        public void GetTemperature(float temperature)
+        public void SetTemperature(float temperature)
         {
             this.temperature = temperature;
-
+            MeasurementsChanged();
         }
-        public void GetHumidity(float humidity)
+        public void SetHumidity(float humidity)
         {
 
             this.humidity = humidity;
+            MeasurementsChanged();
 
         }
-        public void GetPressure(float pressure)
+        public void SetPressure(float pressure)
         {
             this.pressure = pressure;
+            MeasurementsChanged();
         }
     }
 }
