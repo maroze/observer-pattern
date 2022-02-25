@@ -22,7 +22,7 @@ namespace Weather_Station
 
         public string Display()
         {
-           return "Текущие сведения: \n" + this.temperature + " °C градусов \n" + this.humidity + " % влажности\n" + pressure + " мм рт.ст. ";
+            return "Текущие сведения: \n" + this.temperature + " °C градусов \n" + this.humidity + " % влажности\n" + pressure + " мм рт.ст. ";
         }
     }
 }

@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="CurrentConditionsDisplay.cs" />
+    <Compile Include="DisplayElement.cs" />
+    <Compile Include="ForecastDisplay.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticsDisplay.cs" />
     <Compile Include="Subject.cs" />
+    <Compile Include="WeatherData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

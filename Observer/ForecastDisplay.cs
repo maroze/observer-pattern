@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather_Station
 {
-    public class ForecastDisplay: Observer, DisplayElement
+    public class ForecastDisplay : Observer, DisplayElement
     {
         private double temperature;
         private double humidity;
@@ -15,8 +15,8 @@ namespace Weather_Station
 
         public void Update(float temperatue, float humidity, float pressure)
         {
-            this.temperature = temperatue * (rnd.Next(5, 15) /10.0); 
-            this.humidity = humidity * (rnd.Next(5, 15) / 10.0) ;
+            this.temperature = temperatue * (rnd.Next(5, 15) / 10.0);
+            this.humidity = humidity * (rnd.Next(5, 15) / 10.0);
             this.pressure = pressure * (rnd.Next(10, 12) / 10.0);
         }
 
