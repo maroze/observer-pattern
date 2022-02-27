@@ -20,21 +20,21 @@ namespace Weather_Station
             Sub.registerObserver(sd);
             Sub.registerObserver(fd);
 
-           
-
-            Sub.SetPressure(790);
-            
-            Sub.SetHumidity(70);
             Sub.SetTemperature(15);
+            Sub.SetPressure(790);         
+            Sub.SetHumidity(70);
 
+            Console.WriteLine(cd.Display());
+            Console.WriteLine();
+            Console.WriteLine(sd.Display());
+            Console.WriteLine();
+            Console.WriteLine(fd.Display());
+            Console.WriteLine();
 
-            Sub.SetPressure(750);
-            
+            Sub.SetTemperature(5);
+            Sub.SetPressure(760); 
             Sub.SetHumidity(50);
             
-            Sub.SetTemperature(5);
-            
-
             Console.WriteLine(cd.Display());
             Console.WriteLine();
             Console.WriteLine(sd.Display());
