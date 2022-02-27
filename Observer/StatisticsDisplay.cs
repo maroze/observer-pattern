@@ -13,21 +13,20 @@ namespace Weather_Station
         private float maxTemperature;
         private float minTemperature;
 
-        private float lasthumidity;
-        private float avghumidity;
-        private float maxhumidity;
-        private float minhumidity;
+        private float lastHumidity;
+        private float avgHumidity;
+        private float maxHumidity;
+        private float minHumidity;
 
-        private float lastpressure;
-        private float avgpressure;
-        private float maxpressure;
-        private float minpressure;
+        private float lastPressure;
+        private float avgPressure;
+        private float maxPressure;
+        private float minPressure;
 
 
 
-        public void Update(float temperature, float humidity, float pressure)
+        public void Update( float temperature,float humidity, float pressure)
         {
-
             if (lastTemperature == 0)
             {
                 lastTemperature = temperature;
@@ -50,70 +49,72 @@ namespace Weather_Station
             }
             else
             {
-                avgTemperature = temperature + lastTemperature;
+                avgTemperature = maxTemperature + minTemperature;
                 avgTemperature /= 2;
                 lastTemperature = temperature;
             }
 
-            if (lasthumidity == 0)
+            if (lastHumidity == 0)
             {
-                lasthumidity = humidity;
+                lastHumidity = humidity;
             }
-            if (humidity > maxhumidity)
+            if (humidity > maxHumidity)
             {
-                maxhumidity = humidity;
+                maxHumidity = humidity;
             }
-            if (minhumidity == 0)
+            if (minHumidity == 0)
             {
-                minhumidity = humidity;
+                minHumidity = humidity;
             }
-            else if (humidity < minhumidity)
+            else if (humidity < minHumidity)
             {
-                minhumidity = humidity;
+                minHumidity = humidity;
             }
-            if (avghumidity == 0)
+            if (avgHumidity == 0)
             {
-                avghumidity = humidity;
+                avgHumidity = humidity;
             }
             else
             {
-                avghumidity = humidity + lasthumidity;
-                avghumidity /= 2;
-                lasthumidity = humidity;
+                
+                avgHumidity = maxHumidity + minHumidity;
+                avgHumidity /= 2;
+                lastHumidity = humidity;
             }
 
-            if (lastpressure == 0)
+            if (lastPressure == 0)
             {
-                lastpressure = pressure;
+                lastPressure = pressure;
             }
-            if (pressure > maxpressure)
+            if (pressure > maxPressure)
             {
-                maxpressure = pressure;
+                maxPressure = pressure;
             }
-            if (minpressure == 0)
+            if (minPressure == 0)
             {
-                minpressure = pressure;
+                minPressure = pressure;
             }
-            else if (pressure < minpressure)
+            else if (pressure < minPressure)
             {
-                minpressure = pressure;
+                minPressure = pressure;
             }
-            if (avgpressure == 0)
+            if (avgPressure == 0)
             {
-                avgpressure += pressure;
+                avgPressure += pressure;
             }
             else
             {
-                avgpressure = pressure + lastpressure;
-                avgpressure /= 2;
-                lastpressure = pressure;
+                avgPressure = maxPressure + minPressure;
+                avgPressure = avgPressure / 2;
+                lastPressure = pressure;
             }
         }
+
         public string Display()
         {
             return "Средняя t: " + avgTemperature + " °C \nМаксимальная t: " + maxTemperature + " °C \nМинимальная t: " + minTemperature + " °C \n"
-                + "Средняя вл-ть: " + avghumidity + " % \nМаксимальная вл-ть: " + maxhumidity + " % \nМинимальная вл-ть: " + minhumidity + " % \n"
-                + "Среднее дав-е: " + avgpressure + " мм рт.ст. \nМаксимальное дав-е: " + maxpressure + " мм рт.ст. \nМинимальное дав-е: " + minpressure + " мм рт.ст. \n";
+                + "Средняя вл-ть: " + avgHumidity + " % \nМаксимальная вл-ть: " + maxHumidity + " % \nМинимальная вл-ть: " + minHumidity + " % \n"
+                + "Среднее дав-е: " + avgPressure + " мм рт.ст. \nМаксимальное дав-е: " + maxPressure + " мм рт.ст. \nМинимальное дав-е: " + minPressure + " мм рт.ст. \n";
         }
     }
 }

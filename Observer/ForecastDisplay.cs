@@ -8,21 +8,22 @@ namespace Weather_Station
 {
     public class ForecastDisplay : Observer, DisplayElement
     {
-        private double temperature;
-        private double humidity;
-        private double pressure;
+        private double temp;
+        private double humid;
+        private double pres;
         readonly Random rnd = new Random();
 
         public void Update(float temperatue, float humidity, float pressure)
         {
-            this.temperature = temperatue * (rnd.Next(5, 15) / 10.0);
-            this.humidity = humidity * (rnd.Next(5, 15) / 10.0);
-            this.pressure = pressure * (rnd.Next(10, 12) / 10.0);
+            this.temp = temperatue * (rnd.Next(5, 20) / 10.0);
+            this.pres = pressure * (rnd.Next(9, 12) / 10.0);
+            this.humid = humidity * (rnd.Next(7, 15) / 10.0);
+            
         }
 
         public string Display()
         {
-            return "Текущий прогноз: \n" + temperature + " °C градусов\n" + humidity + " % влажности \n" + pressure + " мм рт.ст.";
+            return "Текущий прогноз: \n" + temp + " °C градусов\n" + humid + " % влажности \n" + pres + " мм рт.ст.";
         }
     }
 }

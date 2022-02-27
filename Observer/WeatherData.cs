@@ -22,7 +22,7 @@ namespace Weather_Station
         {
             foreach (var obs in observer)
             {
-                obs.Update(humidity,temperature,  pressure);
+                obs.Update(temperature, humidity, pressure);
             }
         }
 
