@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Weather_Station
 {
-   public interface Observer
+    public interface Observer
     {
-
+        void Update(Subject subject);
     }
 }

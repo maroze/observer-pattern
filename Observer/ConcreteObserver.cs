@@ -12,7 +12,7 @@ namespace Weather_Station
         public int Count { get { return count; } }
         public void Update(Subject subject)
         {
-            count++ ;
+            count++;
         }
     }
 }
